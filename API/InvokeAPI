@@ -1,5 +1,6 @@
 import requests
 import json
+from types import SimpleNamespace
 
 def formatted_print(obj):
     text = json.dumps(obj, sort_keys=True, indent=4)
@@ -15,10 +16,28 @@ def get_data(api):
             f"Hello person, there's a {response.status_code} error with your request")
 
 def get_data_with_parameters(api, parameters):
-    response = requests.get(f"{api}", params=parameters)
+    response = requests.get(f"{api}", headers=parameters)
     if response.status_code == 200:
         print("sucessfully fetched the data with parameters provided")
         formatted_print(response.json())
+        return response.json()
     else:
-        print(
-            f"Hello person, there's a {response.status_code} error with your request")
+        print(f"Hello person, there's a {response.status_code} error with your request")
+
+
+headers_local = {"Content-Type": "application/json","Authorization": "Bearer BQBkMNedq-Ii_7a3J84WO8pLqOdxqNyEmQ3HPK0okEZmuSQfz9TMBBPaDAFSolwwqox3mZ4M2sC2e2TwDJg3sbsE7evI-QScUdfKQ7lr7ZPLDCc3NBIkNW_dXeTRgufc1nfQtxMhhDz6NQuphvYjP9kGxb-wyVAXC61QpJXRIJVJ6Ln0JFi7KItmstoWJIGPE-mL8g"}
+
+APIEndPoint = "https://api.spotify.com/v1/playlists/4dKmKiDUepMkJh6hqEhG2y/tracks" 
+
+json_response = get_data_with_parameters(APIEndPoint, headers_local)
+
+json_response = json.dumps(json_response, indent = 4)
+
+l1 = json.loads(json_response, object_hook=lambda d: SimpleNamespace(**d))
+
+l1 = json.dumps(l1, indent = 4)
+
+l2 = json.loads(l1, object_hook=lambda d: SimpleNamespace(**d))
+
+
+print(l2.added_by)

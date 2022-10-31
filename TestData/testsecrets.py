@@ -1,0 +1,37 @@
+Client ID 8078b11ab4f443518eb27426b0c5235d
+Client Secret f15badc7245540edaa501bc4ec99b44f
+
+redirect URI  
+http://weeklytrenduri.com/callback
+http%3A%2F%2Fweeklytrenduri.com%2Fcallback
+
+
+https://accounts.spotify.com/authorize?client_id=8078b11ab4f443518eb27426b0c5235d&response_type=code&redirect_uri=http%3A%2F%2Fweeklytrenduri.com%2Fcallback
+
+
+curl -H "Authorization: Basic ODA3OGIxMWFiNGY0NDM1MThlYjI3NDI2YjBjNTIzNWQ6ZjE1YmFkYzcyNDU1NDBlZGFhNTAxYmM0ZWM5OWI0NGY=" -d grant_type=authorization_code -d code=AQD4z3bXRCTAVhbWquaMVFXz6StoUubNWfRJbYWvyWXl5TETmsapffF2qOXuzgUmu5AD3N9oGHMIrFHjVi323BEZ7b6i230QZlZ2zB-XardvQon-C45P8OF2LQ4IzFtFjQL3wV3aYupy0UGmtwIFNbXGEY0xLgsdPeF30l3A5-sDPkExnW0 -d redirect_uri=http%3A%2F%2Fweeklytrenduri.com%2Fcallback https://accounts.spotify.com/api/token
+
+
+8078b11ab4f443518eb27426b0c5235d:f15badc7245540edaa501bc4ec99b44f
+
+{"access_token":"BQB9Ck2bo0v2q841DghXWQwwfE6ZImQxldkTCkHPSd2s8EIraWFurepJk_Tp2olN7TP5P0gt3XB2nIxOGcQuorVviEnN9iMTSgF0tUvS6HmUu_npiQBjVDcNZfxnQbM_g3pgOsvKlatjYrmWjOfudrVD3CzVtlhgs2myfDXVlpCkxwytXH4ncxJgVRa6Zs9p91RllQ"
+,"token_type":"Bearer",
+"expires_in":3600,
+"refresh_token":"AQC8xUsdPzcLZuI4YcziA94uqnfT-5SrSiK-1q1O1vpFjBzU3QRausLTSsDQwlxx1QYfbT62JJoCwThgbe6lpvLKxnH6D_04ph8E4I8JAiLXIYtONuw184JbhOf01wS3gC0"}
+
+
+
+api_call = get_data("https://accounts.spotify.com/authorize?client_id=8078b11ab4f443518eb27426b0c5235d&response_type=code&redirect_uri=http%3A%2F%2Fweeklytrenduri.com%2Fcallback")
+
+
+
+curl -H "Authorization: Basic ODA3OGIxMWFiNGY0NDM1MThlYjI3NDI2YjBjNTIzNWQ6ZjE1YmFkYzcyNDU1NDBlZGFhNTAxYmM0ZWM5OWI0NGY=" -d grant_type=authorization_code -d code=AQAKwNPlNvNsTNNAIuvlKtdjxfOIPZqfjnoSHbot0SpKhA1tqHHwPuhK6tl7Wxw9VNy1QPD87DUswZhGr_BgynYgeqgIuCA_3sCVmjTL13PzmMH9lYlpgu0IZzc-52u1YKNHVPR2VSL1B-dDpoEcBe3KOHktNustcCC4EJ43e9hD2jFx1pY -d redirect_uri=http%3A%2F%2Fweeklytrenduri.com%2Fcallback https://accounts.spotify.com/api/token
+
+
+
+{"access_token":"BQBkMNedq-Ii_7a3J84WO8pLqOdxqNyEmQ3HPK0okEZmuSQfz9TMBBPaDAFSolwwqox3mZ4M2sC2e2TwDJg3sbsE7evI-QScUdfKQ7lr7ZPLDCc3NBIkNW_dXeTRgufc1nfQtxMhhDz6NQuphvYjP9kGxb-wyVAXC61QpJXRIJVJ6Ln0JFi7KItmstoWJIGPE-mL8g"
+,"token_type":"Bearer"
+,"expires_in":3600
+,"refresh_token":"AQCdbiYt29XUxN8WA1jPAX67u9QL3Pv8JNE72XLk1g2XhuoF9RC3hyXFonbEKXrCsGUNn8BzxhPcqMqLzzGtNvQbql5dM-BBNf3tMebA4eUcqzhreqyH8SMCrt2o-wCEN4c"}
+
+
